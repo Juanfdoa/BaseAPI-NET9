@@ -1,0 +1,46 @@
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5072"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CONNECTION_STRING": "Host=localhost;Port=5432;Database=BaseApi;Username=postgres;Password=Abc.12345",
+        "JWT_SECRET": "8F2kLm9PqX7vRt3ZwY5NcHs1BdEeJk4UaVxQmLp9Tr6Gs8Hy",
+        "JWT_ISSUER": "https://base-api.com/",
+        "JWT_AUDIENCE": "BaseApiClient",
+        "EMAIL_SMTP": "smtp.gmail.com",
+        "EMAIL_PORT": "587",
+        "EMAIL_USERNAME": "correosnodeseados33@gmail.com",
+        "EMAIL_PASSWORD": "wxkq nxda jdbq ikhq"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7212;http://localhost:5072"
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:52890/",
+      "sslPort": 44382
+    }
+  }
+}
