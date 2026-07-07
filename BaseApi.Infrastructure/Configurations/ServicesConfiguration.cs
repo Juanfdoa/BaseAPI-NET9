@@ -1,6 +1,8 @@
 ﻿using BaseApi.Application.Interfaces.Providers;
+using BaseApi.Application.Interfaces.Repositories;
 using BaseApi.Application.Interfaces.Services;
 using BaseApi.Application.Services;
+using BaseApi.Infrastructure.Repositories;
 using BaseApi.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +17,7 @@ namespace BaseApi.Infrastructure.Configurations
 
 
             //Repositories
-
+            services.AddScoped<IClientTypeRepository, ClientTypeRepository>();
 
 
             //Providers
@@ -23,6 +25,7 @@ namespace BaseApi.Infrastructure.Configurations
             services.AddScoped<IJwtService, JwtService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ITokenEncoder, TokenEncoder>();
+            services.AddScoped<IClientTypeService, ClientTypeService>();
 
             return services;
         }

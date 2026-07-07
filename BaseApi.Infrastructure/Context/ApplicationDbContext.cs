@@ -1,4 +1,5 @@
-﻿using BaseApi.Infrastructure.Identity.Entities;
+﻿using BaseApi.Domain.Entities;
+using BaseApi.Infrastructure.Identity.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,8 @@ namespace BaseApi.Infrastructure.Context
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
+
+        public DbSet<ClientTypeTable> ClientTypes { get; set; }
     }
+
 }
