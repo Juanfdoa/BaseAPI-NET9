@@ -8,7 +8,7 @@ namespace BaseApi.Infrastructure.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityRoleClaim<Guid>> builder)
         {
-            builder.ToTable("RoleClaims", "auth");
+            builder.ToTable("role_claims", "auth");
         }
     }
 }

@@ -16,7 +16,8 @@ namespace BaseApi.Infrastructure.Configurations
 
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseNpgsql(connectionString);
+                options.UseNpgsql(connectionString)
+                    .UseSnakeCaseNamingConvention();
             });
 
             return services;
