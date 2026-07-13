@@ -8,7 +8,7 @@ namespace BaseApi.Infrastructure.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityUserClaim<Guid>> builder)
         {
-            builder.ToTable("UserClaims", "auth");
+            builder.ToTable("user_claims", "auth");
         }
     }
 }

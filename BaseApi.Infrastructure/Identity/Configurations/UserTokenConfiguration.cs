@@ -8,7 +8,7 @@ namespace BaseApi.Infrastructure.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<IdentityUserToken<Guid>> builder)
         {
-            builder.ToTable("UserTokens", "auth");
+            builder.ToTable("user_tokens", "auth");
         }
     }
 }

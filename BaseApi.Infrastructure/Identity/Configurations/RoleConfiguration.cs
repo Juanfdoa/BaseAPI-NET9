@@ -8,7 +8,7 @@ namespace BaseApi.Infrastructure.Identity.Configurations
     {
         public void Configure(EntityTypeBuilder<ApplicationRole> builder)
         {
-            builder.ToTable("Roles", "auth");
+            builder.ToTable("roles", "auth");
 
             builder.Property(x => x.Description)
                 .HasMaxLength(250);
