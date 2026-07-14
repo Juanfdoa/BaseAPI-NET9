@@ -2,10 +2,9 @@
 
 namespace BaseApi.Domain.Entities
 {
-    public class ClientTypeTable : BaseEntity
+    public class ClientType : BaseEntity
     {
         public string Name { get; set; } = default!;
-
         public string? Description { get; set; }
     }
 }

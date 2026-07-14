@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BaseApi.Infrastructure.Repositories
 {
-    public class ClientTypeRepository : BaseRepository<ClientTypeTable>, IClientTypeRepository
+    public class ClientTypeRepository : BaseRepository<ClientType>, IClientTypeRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -14,7 +14,7 @@ namespace BaseApi.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<ClientTypeTable>> GetAllAsync(CancellationToken cancellationToken = default)
+        public async Task<List<ClientType>> GetAllAsync(CancellationToken cancellationToken = default)
         {
             return await _context.ClientTypes
                .Where(x => x.IsActive)

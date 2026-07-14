@@ -2,8 +2,8 @@
 
 namespace BaseApi.Application.Interfaces.Repositories
 {
-    public interface IClientTypeRepository : IBaseRepository<ClientTypeTable>
+    public interface IClientTypeRepository : IBaseRepository<ClientType>
     {
-        Task<List<ClientTypeTable>> GetAllAsync(CancellationToken cancellationToken = default);
+        Task<List<ClientType>> GetAllAsync(CancellationToken cancellationToken = default);
     }
 }

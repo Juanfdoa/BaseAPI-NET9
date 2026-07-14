@@ -5,7 +5,7 @@ namespace BaseApi.Application.Mapping
 {
     public static class ClientTypeMapper
     {
-        public static ClientTypeResponseDto MapToResponse(ClientTypeTable entity)
+        public static ClientTypeResponseDto MapToResponse(ClientType entity)
         {
             return new ClientTypeResponseDto
             {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BaseApi.Api.Controllers
 {
     [ApiController]
-    [Route("api/client-type")]
+    [Route("api/client-types")]
     public class ClientTypeController : ControllerBase
     {
         private readonly IClientTypeService _clientTypeService;

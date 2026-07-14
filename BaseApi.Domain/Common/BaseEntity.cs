@@ -18,5 +18,12 @@ namespace BaseApi.Domain.Common
 
         [Column("is_active")]
         public bool IsActive { get; set; } = true;
+
+        public virtual void SoftDelete()
+        {
+            IsActive = false;
+            UpdatedAt = DateTime.UtcNow;
+            DeletedAt = DateTime.UtcNow;
+        }
     }
 }

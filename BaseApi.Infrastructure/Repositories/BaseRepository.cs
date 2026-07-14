@@ -7,31 +7,39 @@ namespace BaseApi.Infrastructure.Repositories
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity, new()
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        private readonly ApplicationDbContext _context;
 
-        protected BaseRepository(ApplicationDbContext applicationDbContext)
+        protected BaseRepository(ApplicationDbContext context)
         {
-            _applicationDbContext = applicationDbContext;
+            _context = context;
         }
 
         public virtual async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            return await _applicationDbContext.Set<T>().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            return await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         }
 
-        public virtual async Task AddAsync(T entity, CancellationToken cancellationToken = default)
+        public virtual async Task<T> AddAsync(T entity, CancellationToken cancellationToken = default)
         {
-            await _applicationDbContext.Set<T>().AddAsync(entity, cancellationToken);
+            await _context.Set<T>().AddAsync(entity, cancellationToken);
+            return entity;
         }
 
-        public virtual async void Update(T entity)
+        public virtual async Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default)
         {
-            _applicationDbContext.Set<T>().Remove(entity);
+            await _context.Set<T>().AddRangeAsync(entities, cancellationToken);
         }
 
-        public virtual async void Delete(T entity)
+        public virtual Task UpdateAsync(T entity, CancellationToken cancellationToken = default)
         {
-            _applicationDbContext.Set<T>().Update(entity);
+            _context.Set<T>().Update(entity);
+            return Task.CompletedTask; ;
+        }
+
+        public virtual Task DeleteAsync(T entity, CancellationToken cancellationToken = default)
+        {
+            _context.Set<T>().Remove(entity);
+            return Task.CompletedTask;
         }
     }
 }

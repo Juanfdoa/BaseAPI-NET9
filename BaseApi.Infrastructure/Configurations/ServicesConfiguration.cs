@@ -14,18 +14,20 @@ namespace BaseApi.Infrastructure.Configurations
         {
             //Services
             services.AddScoped<IAuthService, AuthService>();
-
+            services.AddScoped<IClientTypeService, ClientTypeService>();
+            services.AddScoped<IClientService, ClientService>();
 
             //Repositories
             services.AddScoped<IClientTypeRepository, ClientTypeRepository>();
-
+            services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             //Providers
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IJwtService, JwtService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<ITokenEncoder, TokenEncoder>();
-            services.AddScoped<IClientTypeService, ClientTypeService>();
+            
 
             return services;
         }
